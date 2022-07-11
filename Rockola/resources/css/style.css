@@ -1,34 +1,22 @@
 
 .contenedor {
-  width: 850px;
+  width: 650px;
   height: 550px;
-  justify-content: center;
-  align-items: center;
   border: 1px solid #0000;
+  z-index: 1;
+}
+
+.imagenes{
+    border-radius: 15%;
 }
 
 .cuerpo{
     background-color:#B8C9F3;
-}
-/* .canciones{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: -100px;
-    bottom: 0px;
-    left: 200px;
     z-index: -1;
 }
-.cancion2{
-    top: -100px;
-    left: 650px;
+
+.cancion{
+    height: 90px;
 }
-.cancion3{
-    top: -100px;
-    left: 1050px;
-}
-.cancion4{
-    top: -100px;
-    left: 1450px;
-} */
+
 

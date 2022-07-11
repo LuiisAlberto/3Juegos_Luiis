@@ -11,32 +11,77 @@
 <body class="cuerpo">
 
 <div class="container">
-    <div class="row">
-        <div class="jumbotron text-center col-12 ">
-            <br>
-                <h1 class="display-4">Rockola</h1>
-                    <audio controls class="canciones text-center col-2 ">
+    <div class="jumbotron text-center col-12 ">
+        <br>
+        <h1 class="display-4">Rockola</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+                <img src="resources/images/img1.jpg" alt="Cancion 1" class=" text-center imagenes col-2">
+                <img src="resources/images/img2.jfif" alt="Cancion 2" class=" text-center imagenes col-2 offset-1">
+                <img src="resources/images/img3.jfif" alt="Cancion 3" class=" text-center imagenes col-2 offset-2">
+                <img src="resources/images/img4.jpg" alt="Cancion 4" class=" text-center imagenes col-2 offset-1">
+                    <!-- Reproducir musica presionandd botones-->
+                <div class="col-1 offset-1">
+                    <button type="button" class="btn btn-light btn-lg btn-block" onclick="play()">Play</button>
+                </div>
+                <div class="col-1 offset-1">
+                    <button type="button" class="btn btn-light btn-lg btn-block" onclick="pause()">Stop</button>
+                </div>
+                <div class="col-1 offset-1">
+                    <button type="button" class="btn btn-light btn-lg btn-block" onclick="next()">Next</button>
+                </div>
+                <div class="col-1 offset-1">
+                    <button type="button" class="btn btn-light btn-lg btn-block" onclick="prev()">Prev</button>
+                </div>
+        </div>
+                    <!-- <audio controls class="cancion text-center col-2" id="controls">
                         <source src="resources/music/cancion1.mp3" type="audio/mp3">
                             </audio>
-                                <audio controls class="canciones cancion2 text-center col-2 offset-1">
+                                <audio controls class="canciones cancion text-center col-2 offset-1" id="controls">
                                     <source src="resources/music/cancion2.mp3" type="audio/mp3">
                                         </audio>
-                                            <audio controls class="canciones cancion3 text-center col-2 offset-1">
+                                            <audio controls class="canciones cancion text-center col-2 offset-2" id="controls">
                                                 <source src="resources/music/cancion3.mp3" type="audio/mp3">
                                                     </audio>
-                                                        <audio controls class="canciones cancion4 text-center col-2 offset-1">
+                                                         <audio controls class="canciones cancion text-center col-2 offset-1" id="controls">
                                                             <source src="resources/music/cancion4.mp3" type="audio/mp3">
-                                                                </audio>
+                                                                </audio> -->
+            <div class="col-12">
+                <br>
+                <br>
+                <button type="button" class="btn btn-lg btn-block btn-light" id="btn">Insert Coin</button>
+            </div>
         </div>
     </div>
 </div>
 
     
 
+<audio src="resources/music/cancion1.mp3" type="audio/mp3" id="music1"></audio>
+<audio src="resources/music/cancion2.mp3" type="audio/mp3" id="music2"></audio>
+<audio src="resources/music/cancion3.mp3" type="audio/mp3" id="music3"></audio>
+<audio src="resources/music/cancion4.mp3" type="audio/mp3" id="music4"></audio>
+<script>
+//reproducir canciones desde la cancion1 
+function play(){
+    var canciones = document.getElementById("canciones");
+    canciones.play();
+}
+//pausar canciones 
+function pause(){
+    var canciones = document.getElementById("canciones");
+    canciones.pause();
+}
 
-<script src="resources/js/script.js"></script>   
-<script src="libs/jquery-3.3.1.min.js"></script>
-<script src="libs/Bootstrap/js/bootstrap.min.js"></script> 
 
+    
+
+
+
+
+</script>   
 </body>
 </html>
