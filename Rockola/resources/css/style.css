@@ -1,24 +1,103 @@
-
 .container{
+  margin-top: 20px !important;
   width: 650px;
-  height: 550px;
-  border: 1px solid #0000;
+  height: 910px;
+  background-color: #B5CDEF;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px rgb(83, 80, 80);
   z-index: 1;
 }
+
+ .disco1{            /*Disco Amarillo */
+    position: absolute;
+    top: 200px;
+    left: 1550px;
+    width: 250px;
+    height: 250px;
+    z-index: -1;
+}
+
+.disco2{                /*Disco Azul con Amarillo */
+    position: absolute;
+    top: -30px;
+    right: 1800px;
+    width: 400px;
+    height: 400px;
+    z-index: -1;
+}
+.disco3{                /*Disco Verde */
+    position: absolute;
+    top: 400px;
+    right: 1750px;
+    width: 125px;
+    height: 125px;
+    z-index: -1;
+}
+
+.disco4{                /*Disco Rojo */
+    position: absolute;
+    top: 600px;
+    right: 1870px;
+    width: 220px;
+    height: 220px;
+    z-index: -1;
+}
+
+.disco5{                /*Disco Azul con puntitos */
+    position: absolute;
+    top: 840px;
+    right: 1680px;
+    width: 100px;
+    height: 100px;
+    z-index: -1;
+}
+
+.disco6{                /*Disco Negro */
+    position: absolute;
+    top: 460px;
+    left: 1770px;
+    width: 100px;
+    height: 100px;
+    z-index: -1;
+}
+
+.disco7{                /*Disco Rosa */
+    position: absolute;
+    top: -100px;
+    left: 1700px;
+    width: 200px;
+    height: 200px;
+    z-index: -1;
+}
+
+.disco8{                /*Disco Morado */
+    position: absolute;
+    top: 670px;
+    left: 1660px;
+    width: 160px;
+    height: 160px;
+    z-index: -1;
+}
+
 
 .imagenes{
     border-radius: 15%;
 }
 
 .cuerpo{
-    background-color:#A2C4C9;
+    background-color: #B7B5EF;
     z-index: -1;
 }
 
 .cancion{
     height: 90px;
 }
-/* Color Theme Swatches in Hex */
+
+.reproductorPlay{
+    border-radius: 1000px !important;
+    height: fit-content !important;
+    width: fit-content !important;
+}
 
 .reproductor{
     border-radius: 1000px !important;
@@ -31,9 +110,13 @@
     justify-content: space-around !important;
 }
 
-.play, .next, .prev{
+.played, .next, .prev{
     height: 50px;
     width: 50px;
 }
 
-
+#coins{
+    position: absolute;
+    right: 950px;
+    z-index: 1;
+}

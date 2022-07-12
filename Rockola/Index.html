@@ -19,87 +19,139 @@
             <br>
             <br>
             <br>
-            <br>
             <div class="row">
                 <img src="resources/images/img1.jpg" alt="Cancion 1" class=" text-center imagenes col-2">
                 <img src="resources/images/img2.jfif" alt="Cancion 2" class=" text-center imagenes col-2 offset-1">
                 <img src="resources/images/img3.jfif" alt="Cancion 3" class=" text-center imagenes col-2 offset-2">
                 <img src="resources/images/img4.jfif" alt="Cancion 4" class=" text-center imagenes col-2 offset-1">
+
                 <!-- Reproducir musica presionandd botones-->
             </div>
             <br>
+            <div class="row">
+                <p class="col-2 h5 ">Savin' Me</p>
+                <p class="col-2 offset-1 h5">Baked</p>
+                <p class="col-2 offset-2 h5">New Flesh</p>
+                <p class="col-2 offset-1 h5">Glimpse Of Us</p>
+            </div>
+            <div class="row">
+                <p class="col-2 h6 ">Nickelback</p>
+                <p class="col-2 offset-1 h6">Hunt The Dinosaur</p>
+                <p class="col-2 offset-2 h6">Current Joys</p>
+                <p class="col-2 offset-1 h6">Joji</p>
+            </div>
             <br>
             <div class="row align">
-                <button type="button" class="btn btn-light btn-lg btn-block reproductor col-1" onclick="prev()"id="prev">
-                    <img src="resources/images/prev.png" alt="Previous" class="prev">
+                <button type="button" class="btn btn-light btn-lg btn-block reproductor " id="cancion1">
+                    Reproducir Canción
                 </button>
-                <button type="button" class="btn btn-light btn-lg btn-block reproductor " onclick="play()" id="play">
-                    <img src="resources/images/play.png" alt="Play & Pause" class="play">
+                <button type="button" class="btn btn-light btn-lg btn-block reproductor offset-1" id="cancion2">
+                    Reproducir Canción
                 </button>
-                <button type="button" class="btn btn-light btn-lg btn-block reproductor" onclick="next()" id="next">
-                    <img src="resources/images/next.png" alt="Next" class="next">
+                <button type="button" class="btn btn-light btn-lg btn-block reproductor offset-2" id="cancion3">
+                    Reproducir Canción
+                </button>
+                <button type="button" class="btn btn-light btn-lg btn-block reproductor offset-1" id="cancion4">
+                    Reproducir Canción
                 </button>
             </div>
+
+            <div class="row align">
+                <button type="button" class="btn btn-light btn-lg btn-block reproductorPlay " onclick="play()"
+                    id="played">
+                    <img src="resources/images/play.png" alt="Play & Pause" class="played">
+                </button>
+            </div>
+
             <div class="col-12">
                 <br>
                 <br>
                 <button type="button" class="btn btn-lg btn-block btn-light" id="btn">Insert Coin</button>
             </div>
         </div>
+        <br>
+        <img src="" alt="" id="coins">
     </div>
 
+    <img src="resources/images/vinilo1.png" alt="Disco" class="disco1">
+    <img src="resources/images/vinilo2.png" alt="Disco" class="disco2">
+    <img src="resources/images/vinilo3.png" alt="Disco" class="disco3">
+    <img src="resources/images/vinilo4.png" alt="Disco" class="disco4">
+    <img src="resources/images/vinilo5.png" alt="Disco" class="disco5">
+    <img src="resources/images/vinilo6.png" alt="Disco" class="disco6">
+    <img src="resources/images/vinilo7.png" alt="Disco" class="disco7">
+    <img src="resources/images/vinilo8.png" alt="Disco" class="disco8">
 
 
-    <audio src="resources/music/cancion1.mp3" type="audio/mp3" id="music1"></audio>
-    <audio src="resources/music/cancion2.mp3" type="audio/mp3" id="music2"></audio>
-    <audio src="resources/music/cancion3.mp3" type="audio/mp3" id="music3"></audio>
-    <audio src="resources/music/cancion4.mp3" type="audio/mp3" id="music4"></audio>
+    <audio src=" " type="audio/mp3" id="music"></audio>
+    <img src="" alt="" id="coins">
 
-<script>
-        //arreglo de canciones
-        let canciones = [music1, music2, music3, music4];
+    <script>
+        
+        alert("Bienvenido a Rockola, dispones de una moneda que sirve para escuchar 4 canciones");
 
-        //poner play y pause en el boton play
         function play() {
             let play = document.getElementById("play");
-            let music = document.getElementById("music1");
+            let music = document.getElementById("music");
             if (music.paused) {
                 music.play();
             } else {
                 music.pause();
             }
         }
+        // Reproducir canciones presionando botones
+        let cancion1 = document.getElementById("cancion1");
+        let cancion2 = document.getElementById("cancion2");
+        let cancion3 = document.getElementById("cancion3");
+        let cancion4 = document.getElementById("cancion4");
+        let music = document.getElementById("music");
+        cancion1.addEventListener("click", function () {
+            music.src = "resources/music/cancion1.mp3";
+            music.play();
+        });
+        cancion2.addEventListener("click", function () {
+            music.src = "resources/music/cancion2.mp3";
+            music.play();
+        });
+        cancion3.addEventListener("click", function () {
+            music.src = "resources/music/cancion3.mp3";
+            music.play();
+        });
+        cancion4.addEventListener("click", function () {
+            music.src = "resources/music/cancion4.mp3";
+            music.play();
+        });
 
-        //reproducir la siguiente cancion
-        function next() {
-            let music = document.getElementById("music1");
-            let next = document.getElementById("next");
-            let prev = document.getElementById("prev");
-            let play = document.getElementById("play");
-            let i = 0;
-            //que cambie entre las 4 canciones
-            for (i = 0; i < canciones.length; i++) {
-                if (canciones[i] == music) {
-                    if (i == canciones.length - 1) {
-                        music.src = "resources/music/cancion1.mp3";
-                        music.play();
-                        prev.style.display = "block";
-                        next.style.display = "none";
-                        play.style.display = "block";
-                        break;
-                    } else {
-                        music.src = "resources/music/cancion" + (i + 2) + ".mp3";
-                        music.play();
-                        prev.style.display = "block";
-                        next.style.display = "block";
-                        play.style.display = "block";
-                        break;
-                    }
-                }
-            }
+        //deshabilitar botones
+        function deshabilitar() {
+            cancion1.disabled = true;
+            cancion2.disabled = true;
+            cancion3.disabled = true;
+            cancion4.disabled = true;
+            played.disabled = true;
         }
-        
-</script>
+        deshabilitar();
+
+        //habilitar botones cuando se de click en el boton insert coin
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", function () {
+            cancion1.disabled = false;
+            cancion2.disabled = false;
+            cancion3.disabled = false;
+            cancion4.disabled = false;
+            played.disabled = false;
+        });
+
+        //poner gif de moneda cuando se presiona el boton insert coin
+        let coins = document.getElementById("coins");
+        btn.addEventListener("click", function () {
+            coins.src = "resources/images/coins.gif";
+        });
+
+
+
+
+    </script>
 </body>
 
 </html>
