@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,47 +9,37 @@
     <link rel="stylesheet" href="libs/Bootstrap/css/bootstrap.min.css">
     <title>Rockola</title>
 </head>
+
 <body class="cuerpo">
 
-<div class="container">
-    <div class="jumbotron text-center col-12 ">
-        <br>
-        <h1 class="display-4">Rockola</h1>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="row">
+    <div class="container">
+        <div class="jumbotron text-center col-12 ">
+            <br>
+            <h1 class="display-4">Rockola</h1>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="row">
                 <img src="resources/images/img1.jpg" alt="Cancion 1" class=" text-center imagenes col-2">
                 <img src="resources/images/img2.jfif" alt="Cancion 2" class=" text-center imagenes col-2 offset-1">
                 <img src="resources/images/img3.jfif" alt="Cancion 3" class=" text-center imagenes col-2 offset-2">
-                <img src="resources/images/img4.jpg" alt="Cancion 4" class=" text-center imagenes col-2 offset-1">
-                    <!-- Reproducir musica presionandd botones-->
-                <div class="col-1 offset-1">
-                    <button type="button" class="btn btn-light btn-lg btn-block" onclick="play()">Play</button>
-                </div>
-                <div class="col-1 offset-1">
-                    <button type="button" class="btn btn-light btn-lg btn-block" onclick="pause()">Stop</button>
-                </div>
-                <div class="col-1 offset-1">
-                    <button type="button" class="btn btn-light btn-lg btn-block" onclick="next()">Next</button>
-                </div>
-                <div class="col-1 offset-1">
-                    <button type="button" class="btn btn-light btn-lg btn-block" onclick="prev()">Prev</button>
-                </div>
-        </div>
-                    <!-- <audio controls class="cancion text-center col-2" id="controls">
-                        <source src="resources/music/cancion1.mp3" type="audio/mp3">
-                            </audio>
-                                <audio controls class="canciones cancion text-center col-2 offset-1" id="controls">
-                                    <source src="resources/music/cancion2.mp3" type="audio/mp3">
-                                        </audio>
-                                            <audio controls class="canciones cancion text-center col-2 offset-2" id="controls">
-                                                <source src="resources/music/cancion3.mp3" type="audio/mp3">
-                                                    </audio>
-                                                         <audio controls class="canciones cancion text-center col-2 offset-1" id="controls">
-                                                            <source src="resources/music/cancion4.mp3" type="audio/mp3">
-                                                                </audio> -->
+                <img src="resources/images/img4.jfif" alt="Cancion 4" class=" text-center imagenes col-2 offset-1">
+                <!-- Reproducir musica presionandd botones-->
+            </div>
+            <br>
+            <br>
+            <div class="row align">
+                <button type="button" class="btn btn-light btn-lg btn-block reproductor col-1" onclick="prev()"id="prev">
+                    <img src="resources/images/prev.png" alt="Previous" class="prev">
+                </button>
+                <button type="button" class="btn btn-light btn-lg btn-block reproductor " onclick="play()" id="play">
+                    <img src="resources/images/play.png" alt="Play & Pause" class="play">
+                </button>
+                <button type="button" class="btn btn-light btn-lg btn-block reproductor" onclick="next()" id="next">
+                    <img src="resources/images/next.png" alt="Next" class="next">
+                </button>
+            </div>
             <div class="col-12">
                 <br>
                 <br>
@@ -56,32 +47,59 @@
             </div>
         </div>
     </div>
-</div>
 
-    
 
-<audio src="resources/music/cancion1.mp3" type="audio/mp3" id="music1"></audio>
-<audio src="resources/music/cancion2.mp3" type="audio/mp3" id="music2"></audio>
-<audio src="resources/music/cancion3.mp3" type="audio/mp3" id="music3"></audio>
-<audio src="resources/music/cancion4.mp3" type="audio/mp3" id="music4"></audio>
+
+    <audio src="resources/music/cancion1.mp3" type="audio/mp3" id="music1"></audio>
+    <audio src="resources/music/cancion2.mp3" type="audio/mp3" id="music2"></audio>
+    <audio src="resources/music/cancion3.mp3" type="audio/mp3" id="music3"></audio>
+    <audio src="resources/music/cancion4.mp3" type="audio/mp3" id="music4"></audio>
+
 <script>
-//reproducir canciones desde la cancion1 
-function play(){
-    var canciones = document.getElementById("canciones");
-    canciones.play();
-}
-//pausar canciones 
-function pause(){
-    var canciones = document.getElementById("canciones");
-    canciones.pause();
-}
+        //arreglo de canciones
+        let canciones = [music1, music2, music3, music4];
 
+        //poner play y pause en el boton play
+        function play() {
+            let play = document.getElementById("play");
+            let music = document.getElementById("music1");
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        }
 
-    
-
-
-
-
-</script>   
+        //reproducir la siguiente cancion
+        function next() {
+            let music = document.getElementById("music1");
+            let next = document.getElementById("next");
+            let prev = document.getElementById("prev");
+            let play = document.getElementById("play");
+            let i = 0;
+            //que cambie entre las 4 canciones
+            for (i = 0; i < canciones.length; i++) {
+                if (canciones[i] == music) {
+                    if (i == canciones.length - 1) {
+                        music.src = "resources/music/cancion1.mp3";
+                        music.play();
+                        prev.style.display = "block";
+                        next.style.display = "none";
+                        play.style.display = "block";
+                        break;
+                    } else {
+                        music.src = "resources/music/cancion" + (i + 2) + ".mp3";
+                        music.play();
+                        prev.style.display = "block";
+                        next.style.display = "block";
+                        play.style.display = "block";
+                        break;
+                    }
+                }
+            }
+        }
+        
+</script>
 </body>
+
 </html>

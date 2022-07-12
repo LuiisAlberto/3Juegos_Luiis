@@ -1,5 +1,5 @@
 
-.contenedor {
+.container{
   width: 650px;
   height: 550px;
   border: 1px solid #0000;
@@ -11,12 +11,29 @@
 }
 
 .cuerpo{
-    background-color:#B8C9F3;
+    background-color:#A2C4C9;
     z-index: -1;
 }
 
 .cancion{
     height: 90px;
+}
+/* Color Theme Swatches in Hex */
+
+.reproductor{
+    border-radius: 1000px !important;
+    height: fit-content !important;
+    width: fit-content !important;
+}
+
+.align{
+    display: flex !important;
+    justify-content: space-around !important;
+}
+
+.play, .next, .prev{
+    height: 50px;
+    width: 50px;
 }
 
 
