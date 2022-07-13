@@ -5,14 +5,153 @@
     z-index: 1;
 }
 
-.container{
-    margin-top: 20px !important;
-    width: 650px;
-    height: 910px;
+.points{
+    position: relative;
+    margin-top: 15px !important;
+    width: 150px !important;
+    height: 30px !important;
     background-color : transparent; 
-    border-radius: 15px;
+    border-radius: 8px;
     box-shadow: 0px 0px 10px rgb(83, 80, 80);
     z-index: 1;
+    float: right;
+    margin-right: 17% !important;
 }
 
-    /* Color de titulo Veremos */
+.difficult{
+    position: relative;
+    margin-top: 15px !important;
+    width: 175px !important;
+    height: 30px !important;
+    background-color : transparent; 
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgb(83, 80, 80);
+    z-index: 1;
+    float: left;
+    margin-left: 19% !important;
+}
+
+.container{
+    position: relative;
+    margin-top: 60px !important;
+    width: 850px !important;
+    height: 430px !important; 
+    background-color : transparent; 
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgb(83, 80, 80);
+    z-index: 1;
+    margin-right: 17% !important;
+}
+
+.point{
+    width: 60px !important;
+    height: 40px !important;
+    border-radius: 8px;
+    border: transparent;   
+    background-color: transparent;
+    
+}
+.diff{
+    width: 80px !important;
+    height: 25px !important;
+    border-radius: 8px;
+    margin-top: 2px !important;
+    margin-left: 65px !important;
+    background-color: transparent;
+}
+
+.textoDifficult{
+    margin-top: 3px !important;
+}
+
+.circle{
+    position: absolute;
+    border-radius: 50%;
+    width: 150px !important;
+    height: 150px !important;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgb(83, 80, 80);
+    z-index: 1;
+    left: 80px !important;
+    top: 40px !important;
+}
+
+.circle1{
+    position: absolute;
+    border-radius: 50%;
+    width: 150px !important;
+    height: 150px !important;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgb(83, 80, 80);
+    z-index: 1;
+    left: 350px !important;
+    top: 40px !important;
+}
+
+.circle2{
+    position: absolute;
+    border-radius: 50%;
+    width: 150px !important;
+    height: 150px !important;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgb(83, 80, 80);
+    z-index: 1;
+    left: 610px !important;
+    top: 40px !important;
+}
+
+.circle3{
+    position: absolute;
+    border-radius: 50%;
+    width: 150px !important;
+    height: 150px !important;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgb(83, 80, 80);
+    z-index: 1;
+    left: 80px !important;
+    top: 250px !important;
+}
+
+.circle4{
+    position: absolute;
+    border-radius: 50%;
+    width: 150px !important;
+    height: 150px !important;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgb(83, 80, 80);
+    z-index: 1;
+    left: 350px !important;
+    top: 250px !important;
+}
+
+.circle5{
+    position: absolute;
+    border-radius: 50%;
+    width: 150px !important;
+    height: 150px !important;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgb(83, 80, 80);
+    z-index: 1;
+    left: 610px !important;
+    top: 250px !important;
+}
+
+.circle6{
+    position: absolute;
+    border-radius: 50%;
+    width: 150px !important;
+    height: 150px !important;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgb(83, 80, 80);
+    z-index: 1;
+    left: 610px !important;
+    top: 250px !important;
+}
+
+.topo{
+    position: absolute;
+    width: 110px !important;
+    height: 110px !important;
+    left: 18px;
+    top: 17px;
+}

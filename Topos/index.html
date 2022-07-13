@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,16 +9,49 @@
     <link rel="stylesheet" href="libs/bootstrap.min.css">
     <title>Topos</title>
 </head>
-<body class="cuerpo" >
 
-<div class="container">
-    <div class="jumbotron text-center col-12 ">
+<body class="cuerpo">
+
+    <div class=" text-center col-12 ">
         <div class="row">
-        <p class="display-6 title">Destruye al topo</p>
+            <p class="display-6 title">Destruye al topo</p>
         </div>
     </div>
-</div>
+    <div class="points row">
+        <p class="textoPuntos h6 offset-1 col-1">Puntos:</p>
+        <input type="text" class="point col-1" id="puntos" onlyread disabled>0</input>
+    </div>
+    <div class="difficult row">
+        <label class="textoDifficult h6 col-1">Dificultad:</label>
+        <select class="diff offset-2 col-1" id="Difficult">
+            <option value="5000">Facil</option>
+            <option value="2500">Medio</option>
+            <option value="1000">Dificil</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <div class="circle">
+            <img src="resources/images/topo.png" alt="Topo" class="topo">
+        </div> <!-- Primer Circulo -->
+        <div class="circle1">
+            <img src="resources/images/topo.png" alt="Topo" class="topo">
+        </div> <!-- Segundo Circulo-->
+         <div class="circle2">
+            <img src="resources/images/topo.png" alt="Topo" class="topo">
+         </div>  <!-- Tercer Circulo -->
+        <div class="circle3">
+            <img src="resources/images/topo.png" alt="Topo" class="topo">
+        </div> <!-- Cuarto Circulo -->
+        <div class="circle4">
+            <img src="resources/images/topo.png" alt="Topo" class="topo">
+        </div> <!-- Quinto Circulo -->
+        <div class="circle5">
+            <img src="resources/images/topo.png" alt="Topo" class="topo">
+        </div> <!-- Sexto Circulo -->
+    </div>
 
 
 </body>
+
 </html>
