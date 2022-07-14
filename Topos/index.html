@@ -12,63 +12,285 @@
 
 <body class="cuerpo col-12">
 
-        <div class=" text-center col-12 ">
-            <div class="row">
-                <p class="display-6 title">Aplasta al Topo</p>
-            </div>
+    <div class=" text-center col-12 ">
+        <div class="row">
+            <p class="display-6 title">Aplasta al Topo</p>
         </div>
-        <div class="points row">
-            <p class="textoPuntos h6 offset-1 col-1">Puntos:</p>
-            <input type="text" class="point col-1" id="puntos" onlyread disabled></input>
-        </div>
-        <div class="difficult row">
-            <label class="textoDifficult h6 col-1">Dificultad:</label>
-            <select class="diff offset-2 col-1" id="Difficult">
-                <option value="5000" class="opcion">Facil</option>
-                <option value="2500" class="opcion">Normal</option>
-                <option value="1000" class="opcion">Dificil</option>
-            </select>
-        </div>
-        <div class="start row">
-            <button class="btnStart btn-light ">Start</button>
-        </div>
+    </div>
+    <div class="points row">
+        <p class="textoPuntos h6 offset-1 col-1">Puntos:</p>
+        <input type="text" class="point col-1" id="puntos" onlyread disabled></input>
+    </div>
+    <div class="difficult row">
+        <label class="textoDifficult h6 col-1">Dificultad:</label>
+        <select class="diff offset-2 col-1" id="dificultad">
+            <option value="3000" class="opcion" id="dificultad">Facil</option>
+            <option value="200" class="opcion" id="dificultad">Normal</option>
+            <option value="500" class="opcion" id="dificultad">Dificil</option>
+        </select>
+    </div>
+    <div class="start row">
+        <button class="btnIniciar btn-light " id="btnIniciar">Start</button>
+    </div>
     <div class="container">
         <div class="circle">
-            <img src="resources/images/topo.png" alt="Topo" class="topo">
-            <button class="accion">Hola!</button>
+            <img src="resources/images/blanco.png" id="img1" class="img">
+            <button class="accion" id="btn1" disabled></button>
         </div> <!-- Primer Circulo -->
         <div class="circle1">
-            <img src="resources/images/topo.png" alt="Topo" class="topo">
-            <button class="accion">Hola!</button>
+            <img src="resources/images/blanco.png" id="img2" class="img">
+            <button class="accion" id="btn2" disabled></button>
         </div> <!-- Segundo Circulo-->
         <div class="circle2">
-            <img src="resources/images/topo.png" alt="Topo" class="topo">
-            <button class="accion">Hola!</button>
+            <img src="resources/images/blanco.png" id="img3" class="img">
+            <button class="accion" id="btn3" disabled></button>
         </div> <!-- Tercer Circulo -->
         <div class="circle3">
-            <img src="resources/images/topo.png" alt="Topo" class="topo">
-            <button class="accion">Hola!</button>
+            <img src="resources/images/blanco.png" id="img4" class="img">
+    
+            <button class="accion" id="btn4" disabled></button>
         </div> <!-- Cuarto Circulo -->
         <div class="circle4">
-            <img src="resources/images/topo.png" alt="Topo" class="topo">
-            <button class="accion">Hola!</button>
+            <img src="resources/images/blanco.png" id="img5" class="img">
+            <button class="accion" id="btn5" disabled></button>
         </div> <!-- Quinto Circulo -->
         <div class="circle5">
-            <img src="resources/images/topo.png" alt="Topo" class="topo">
-            <button class="accion">Hola!</button>
+            <img src="resources/images/blanco.png" id="img6" class="img">
+            <button class="accion" id="btn6" disabled></button>
         </div> <!-- Sexto Circulo -->
     </div>
 
-
+    <!-- <img src="resources/images/topo.png" alt="Topo" class="topo">
+    <img src="resources/images/topo.png" alt="Topo" class="topo">
+    <img src="resources/images/topo.png" alt="Topo" class="topo">
+    <img src="resources/images/topo.png" alt="Topo" class="topo">
+    <img src="resources/images/topo.png" alt="Topo" class="topo">
+    <img src="resources/images/topo.png" alt="Topo" class="topo"> -->
 </body>
 
-<script src="resources/js/juego.js"></script>
 <script>
+
+    class Juego {
+        constructor() {
+            this.puntos = 0;
+            this.velocidad;
+            this.img = "topo"
+            this.numeroAleatorio;
+        }
+
+        //actualizar puntos
+        actualizarPuntos() {
+            let puntos = document.getElementById("puntos").value;
+            puntos = parseInt(puntos) + 1;
+            document.getElementById("puntos").value = puntos;
+            this.puntos = puntos;
+        }
+
+        seleccionarDificultad() {
+            let dificultad = document.getElementById("dificultad").value;
+            this.velocidad = dificultad;
+            console.log(this.velocidad);
+        }
+
+        iniciarJuego() {
+            this.seleccionarDificultad();
+            this.clickDesactivarDificultad();
+            let tiempo = setTimeout(() => {
+                this.numeroRandom();
+                this.ponerImg();
+                let tiempo2 = setTimeout(() => {
+                    this.quitarImg();
+                    this.clickDesactivarTodos();
+                    this.repetir();
+                }, this.velocidad);
+            }, this.velocidad);
+
+        }
+
+        repetir() {
+            if (this.puntos < 5) {
+                this.iniciarJuego();
+            } else {
+                alert("Has ganado");
+            }
+        }
+
+        numeroRandom() {
+            let numero = Math.floor(Math.random() * 6) + 1;
+            this.numeroAleatorio = numero;
+        }
+
+        ponerImg() {
+            let v1 = document.getElementById("img" + this.numeroAleatorio).src = "resources/images/"+ this.img + ".png";
+            this.activadorBtn();
+        }
+
+        quitarImg() {
+            let v1 = document.getElementById("img" + this.numeroAleatorio).src = "resources/images/blanco.png";
+        }
+
+        clickDesactivarDificultad(boton) {
+            btnIniciar.disabled = true;
+            dificultad.disabled = true;
+        }
+
+        activadorBtn() {
+            switch (this.numeroAleatorio) {
+                case 1:
+                    this.clickActivar1();
+                    break;
+                case 2:
+                    this.clickActivar2();
+                    break;
+                case 3:
+                    this.clickActivar3();
+                    break;
+                case 4:
+                    this.clickActivar4();
+                    break;
+                case 5:
+                    this.clickActivar5();
+                    break;
+                case 6:
+                    this.clickActivar6();
+                    break;
+            }
+        }
+
+
+        clickActivar1(boton) {
+            btn1.disabled = false;
+        }
+
+        clickActivar2(boton) {
+            btn2.disabled = false;
+        }
+
+        clickActivar3(boton) {
+            btn3.disabled = false;
+        }
+
+        clickActivar4(boton) {
+            btn4.disabled = false;
+        }
+
+        clickActivar5(boton) {
+            btn5.disabled = false;
+        }
+
+        clickActivar6(boton) {
+            btn6.disabled = false;
+        }
+
+
+        //desactivar botones
+        //desactivar botones con switch
+
+        clickDesactivarTodos(boton) {
+            switch (this.numeroAleatorio) {
+                case 1:
+                    this.clickDesactivar1();
+                    break;
+                case 2:
+                    this.clickDesactivar2();
+                    break;
+                case 3:
+                    this.clickDesactivar3();
+                    break;
+                case 4:
+                    this.clickDesactivar4();
+                    break;
+                case 5:
+                    this.clickDesactivar5();
+                    break;
+                case 6:
+                    this.clickDesactivar6();
+                    break;
+            }
+        }
+
+        clickDesactivar1(boton) {
+            btn1.disabled = true;
+        }
+
+        clickDesactivar2(boton) {
+            btn2.disabled = true;
+        }
+
+        clickDesactivar3(boton) {
+            btn3.disabled = true;
+        }
+
+        clickDesactivar4(boton) {
+            btn4.disabled = true;
+        }
+
+        clickDesactivar5(boton) {
+            btn5.disabled = true;
+        }
+
+        clickDesactivar6(boton) {
+            btn6.disabled = true;
+        }
+
+    }
+
     let juego = new Juego();
 
-    btnStart.addEventListener('click', function() {
-        juego.start();
+    btnIniciar = document.getElementById('btnIniciar');
+    btn1 = document.getElementById("btn1");
+    btn2 = document.getElementById("btn2");
+    btn3 = document.getElementById("btn3");
+    btn4 = document.getElementById("btn4");
+    btn5 = document.getElementById("btn5");
+    btn6 = document.getElementById("btn6");
+
+
+    btnIniciar.addEventListener("click", function () {
+        juego.iniciarJuego();
     });
+
+    btn1.addEventListener("click", function () {
+        juego.actualizarPuntos();
+        juego.clickDesactivar1();
+        juego.quitarImg();
+    });
+
+    btn2.addEventListener("click", function () {
+        juego.actualizarPuntos();
+        juego.clickDesactivar2();
+        juego.quitarImg();
+    });
+
+    btn3.addEventListener("click", function () {
+        juego.actualizarPuntos();
+        juego.clickDesactivar3();
+        juego.quitarImg();
+    });
+
+    btn4.addEventListener("click", function () {
+        juego.actualizarPuntos();
+        juego.clickDesactivar4();
+        juego.quitarImg();
+    });
+
+    btn5.addEventListener("click", function () {
+        juego.actualizarPuntos();
+        juego.clickDesactivar5();
+        juego.quitarImg();
+    });
+
+    btn6.addEventListener("click", function () {
+        juego.actualizarPuntos();
+        juego.clickDesactivar6();
+        juego.quitarImg();
+    });
+
+    function seleccionarDificultad() {
+        let dificultad = document.getElementById("dificultad").value;
+        velocidad = dificultad;
+        console.log(velocidad);
+    }
 
 </script>
 

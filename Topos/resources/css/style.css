@@ -18,7 +18,7 @@
     scroll-snap-align: center;
 }
 
-.btnStart{
+.btnIniciar{
     position: absolute;
     margin-top: 15px !important;
     width: 175px !important;
@@ -60,6 +60,8 @@
     border-radius: 8px;
     border: transparent;   
     background-color: transparent;
+    margin-left: 35px !important;
+    margin-top: -10px !important;
 }
 
 .diff{
@@ -165,13 +167,23 @@
     height: 110px !important;
     left: 18px;
     top: 17px;
+    z-index: -1;
 }
 
 .accion{
     position: absolute;
     width: 150px !important;
     height: 150px !important;
-    background-color: transparent;
+    background-color: #FFFFFF !important;
     border-radius: 50% !important;
+    border: transparent;
+}
+
+.img{
+    position: absolute;
+    width: 150px !important;
+    height: 150px !important;
+    border-radius: 50% !important;
+    left: 0px !important;
     border: transparent;
 }
