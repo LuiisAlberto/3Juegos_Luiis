@@ -6,7 +6,7 @@
 }
 
 .points{
-    position: relative;
+    position: absolute;
     margin-top: 15px !important;
     width: 150px !important;
     height: 30px !important;
@@ -14,12 +14,12 @@
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgb(83, 80, 80);
     z-index: 1;
-    float: right;
-    margin-right: 17% !important;
+    left: 71%;
+    scroll-snap-align: center;
 }
 
-.difficult{
-    position: relative;
+.btnStart{
+    position: absolute;
     margin-top: 15px !important;
     width: 175px !important;
     height: 30px !important;
@@ -27,8 +27,19 @@
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgb(83, 80, 80);
     z-index: 1;
-    float: left;
-    margin-left: 19% !important;
+    left: 44%;
+}
+
+.difficult{
+    position: absolute;
+    margin-top: 15px !important;
+    width: 200px !important;
+    height: 30px !important;
+    background-color : transparent; 
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgb(83, 80, 80);
+    z-index: 1;
+    left: 20.5%;
 }
 
 .container{
@@ -40,7 +51,7 @@
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgb(83, 80, 80);
     z-index: 1;
-    margin-right: 17% !important;
+
 }
 
 .point{
@@ -49,10 +60,10 @@
     border-radius: 8px;
     border: transparent;   
     background-color: transparent;
-    
 }
+
 .diff{
-    width: 80px !important;
+    width: 100px !important;
     height: 25px !important;
     border-radius: 8px;
     margin-top: 2px !important;
@@ -154,4 +165,13 @@
     height: 110px !important;
     left: 18px;
     top: 17px;
+}
+
+.accion{
+    position: absolute;
+    width: 150px !important;
+    height: 150px !important;
+    background-color: transparent;
+    border-radius: 50% !important;
+    border: transparent;
 }

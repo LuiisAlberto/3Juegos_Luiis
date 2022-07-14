@@ -10,48 +10,66 @@
     <title>Topos</title>
 </head>
 
-<body class="cuerpo">
+<body class="cuerpo col-12">
 
-    <div class=" text-center col-12 ">
-        <div class="row">
-            <p class="display-6 title">Destruye al topo</p>
+        <div class=" text-center col-12 ">
+            <div class="row">
+                <p class="display-6 title">Aplasta al Topo</p>
+            </div>
         </div>
-    </div>
-    <div class="points row">
-        <p class="textoPuntos h6 offset-1 col-1">Puntos:</p>
-        <input type="text" class="point col-1" id="puntos" onlyread disabled>0</input>
-    </div>
-    <div class="difficult row">
-        <label class="textoDifficult h6 col-1">Dificultad:</label>
-        <select class="diff offset-2 col-1" id="Difficult">
-            <option value="5000">Facil</option>
-            <option value="2500">Medio</option>
-            <option value="1000">Dificil</option>
-        </select>
-    </div>
-
+        <div class="points row">
+            <p class="textoPuntos h6 offset-1 col-1">Puntos:</p>
+            <input type="text" class="point col-1" id="puntos" onlyread disabled></input>
+        </div>
+        <div class="difficult row">
+            <label class="textoDifficult h6 col-1">Dificultad:</label>
+            <select class="diff offset-2 col-1" id="Difficult">
+                <option value="5000" class="opcion">Facil</option>
+                <option value="2500" class="opcion">Normal</option>
+                <option value="1000" class="opcion">Dificil</option>
+            </select>
+        </div>
+        <div class="start row">
+            <button class="btnStart btn-light ">Start</button>
+        </div>
     <div class="container">
         <div class="circle">
             <img src="resources/images/topo.png" alt="Topo" class="topo">
+            <button class="accion">Hola!</button>
         </div> <!-- Primer Circulo -->
         <div class="circle1">
             <img src="resources/images/topo.png" alt="Topo" class="topo">
+            <button class="accion">Hola!</button>
         </div> <!-- Segundo Circulo-->
-         <div class="circle2">
+        <div class="circle2">
             <img src="resources/images/topo.png" alt="Topo" class="topo">
-         </div>  <!-- Tercer Circulo -->
+            <button class="accion">Hola!</button>
+        </div> <!-- Tercer Circulo -->
         <div class="circle3">
             <img src="resources/images/topo.png" alt="Topo" class="topo">
+            <button class="accion">Hola!</button>
         </div> <!-- Cuarto Circulo -->
         <div class="circle4">
             <img src="resources/images/topo.png" alt="Topo" class="topo">
+            <button class="accion">Hola!</button>
         </div> <!-- Quinto Circulo -->
         <div class="circle5">
             <img src="resources/images/topo.png" alt="Topo" class="topo">
+            <button class="accion">Hola!</button>
         </div> <!-- Sexto Circulo -->
     </div>
 
 
 </body>
+
+<script src="resources/js/juego.js"></script>
+<script>
+    let juego = new Juego();
+
+    btnStart.addEventListener('click', function() {
+        juego.start();
+    });
+
+</script>
 
 </html>
