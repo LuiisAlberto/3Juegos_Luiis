@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="stylesheet" href="../libs/Bootstrap/css/bootstrap.min.css">
+    <title>Elevador</title>
+</head>
+
+<body class="fondo">
+    <!-- Juego Elevador -->
+    <div class="container cont">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <h1 class="display-4 text-center">Elevador</h1>
+                    <hr class="my-4">
+                    <div class="text-center">
+                        <div class="col-12">
+                            <button type="button" class="btn btn-lg btn-block btn-primary" id="p1">piso1</button>
+                            <button type="button" class="btn btn-lg btn-block btn-primary" id="p2">piso2</button>
+                            <button type="button" class="btn btn-lg btn-block btn-primary" id="p3">piso3</button>
+                            <button type="button" class="btn btn-lg btn-block btn-primary" id="p4">piso4</button>
+                            <button type="button" class="btn btn-lg btn-block btn-primary" id="p5">piso5</button>
+                            <button type="button" class="btn btn-lg btn-block btn-primary" id="pb">PB</button>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="container">
+                    <div>
+                        <section class="piso1">
+                            <img src="resources/images/piso.png" alt="piso" class="img pos5" id="persona5">
+                            <div class="piso2">
+                                <img src="resources/images/piso.png" alt="piso" class="img pos4" id="persona4">
+                            </div>
+                            <section class="piso3">
+                                <img src="resources/images/piso.png" alt="piso" class="img pos3" id="persona3">
+                            </section>
+                            <section class="piso4">
+                                <img src="resources/images/piso.png" alt="piso" class="img pos2" id="persona2">
+                            </section>
+                            <section class="piso5">
+                                <img src="resources/images/piso.png" alt="piso" class="img pos1" id="persona1">
+                            </section>
+                            <section class="pb">
+                                <div>
+                                    <p class="h6 text-center">PLANTA BAJA</p>
+                                </div>
+                            </section>
+                        </section>
+                    </div>
+                    <div>
+                        <section>
+                            <img src="resources/images/elevador.png" alt="Elevador" class="elevador" id="elevador">
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="resources/js/juego.js"></script>
+</body>
+
+<script>
+
+    //Piso 1
+    document.getElementById("p1").addEventListener("click", function() {
+        document.getElementById("elevador").style.transition = "all 1s";
+        document.getElementById("elevador").style.transform = "translateY(-80px)";
+    });
+
+    //Piso 2
+    document.getElementById("p2").addEventListener("click", function() {
+        document.getElementById("elevador").style.transition = "all 1s";
+        document.getElementById("elevador").style.transform = "translateY(-167px)";
+    });
+
+    //Piso 3
+    document.getElementById("p3").addEventListener("click", function() {
+        document.getElementById("elevador").style.transition = "all 1s";
+        document.getElementById("elevador").style.transform = "translateY(-250px)";
+    });
+
+    //Piso 4
+    document.getElementById("p4").addEventListener("click", function() {
+        document.getElementById("elevador").style.transition = "all 1s";
+        document.getElementById("elevador").style.transform = "translateY(-335px)";
+    });
+
+    //Piso 5
+    document.getElementById("p5").addEventListener("click", function() {
+        document.getElementById("elevador").style.transition = "all 1s";
+        document.getElementById("elevador").style.transform = "translateY(-425px)";
+    });
+
+    //Piso PB
+    document.getElementById("pb").addEventListener("click", function() {
+        document.getElementById("elevador").style.transition = "all 1s";
+        document.getElementById("elevador").style.transform = "translateY(0px)";
+    });
+    
+    //Desaparecer persona1 cuando el elevador llega al piso1
+    document.getElementById("elevador").addEventListener("transitionend", function() {
+        document.getElementById("persona1").style.display = "none";
+    });
+
+    //Si doy click en el boton de piso1, despues de dos segundos desaparecera la persona1
+    document.getElementById("p1").addEventListener("click", function() {
+        setTimeout(function() {
+            document.getElementById("persona1").style.display = "none";
+        }, 2000);
+    });
+
+    //Si doy click en el boton de piso2, despues de dos segundos desaparecera la persona2
+    document.getElementById("p2").addEventListener("click", function() {
+        setTimeout(function() {
+            document.getElementById("persona2").style.display = "none";
+        }, 1000);
+    });
+
+    //Si doy click en el boton de piso3, despues de dos segundos desaparecera la persona3
+    document.getElementById("p3").addEventListener("click", function() {
+        setTimeout(function() {
+            document.getElementById("persona3").style.display = "none";
+        }, 1000);
+    });
+
+    //Si doy click en el boton de piso4, despues de dos segundos desaparecera la persona4
+    document.getElementById("p4").addEventListener("click", function() {
+        setTimeout(function() {
+            document.getElementById("persona4").style.display = "none";
+        }, 1000);
+    });
+
+    //Si doy click en el boton de piso5, despues de dos segundos desaparecera la persona5 y aparece una alerta
+    document.getElementById("p5").addEventListener("click", function() {
+        setTimeout(function() {
+            document.getElementById("persona5").style.display = "none";
+            alert("¡Has llenado el elevador! Regresa a Planta Baja");
+        }, 1000);
+    });
+
+    //Si doy click en el boton pb, despues de cuatro segundos saldra una alerta y desactivara los botones de piso
+    document.getElementById("pb").addEventListener("click", function() {
+        setTimeout(function() {
+            alert("¡Has Ganado!");
+            document.getElementById("p1").disabled = true;
+            document.getElementById("p2").disabled = true;
+            document.getElementById("p3").disabled = true;
+            document.getElementById("p4").disabled = true;
+            document.getElementById("p5").disabled = true;
+            document.getElementById("pb").disabled = true;
+        }, 1000);
+    });
+
+</script>
+
+</html>

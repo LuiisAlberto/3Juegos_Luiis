@@ -1,0 +1,112 @@
+.fondo{
+    background-color: #A8C7FF;
+}
+
+.cont{
+    margin-top: 40px !important;
+    margin-left: 100px !important;
+    width: 650px ;
+    height: 710px;
+    background-color: #B5CDEF;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgb(83, 80, 80);
+    z-index: 1;
+}
+
+.elevador{
+    position: absolute;
+    width: 70px !important;
+    height: 70px !important;
+    left: 750px !important;
+    top: 653px !important;
+}
+
+.piso1{
+    position: absolute;
+    width: 300px !important;
+    height: 70px !important;
+    background-color: #BB9D74;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgb(83, 80, 80);
+    margin-left: 300px !important;
+}
+
+.piso2{
+    position: absolute;
+    top: 85px !important;
+    width: 300px !important;
+    height: 70px !important;
+    background-color: #BB9D74;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgb(83, 80, 80);
+}
+
+.piso3{
+    position: absolute;
+    top: 170px !important;
+    width: 300px !important;
+    height: 70px !important;
+    background-color: #BB9D74;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgb(83, 80, 80);
+}
+
+.piso4{
+    position: absolute;
+    top: 255px !important;
+    width: 300px !important;
+    height: 70px !important;
+    background-color: #BB9D74;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgb(83, 80, 80);
+}
+.piso5{
+    position: absolute;
+    top: 340px !important;
+    width: 300px !important;
+    height: 70px !important;
+    background-color: #BB9D74;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgb(83, 80, 80);
+}
+.pb{
+    position: absolute;
+    top: 425px !important;
+    width: 300px !important;
+    height: 70px !important;
+    background-color: #B9B8B6;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgb(83, 80, 80);
+}
+
+.img{
+    width: 60px !important;
+    height: 60px !important;
+}
+
+.pos1{
+position: absolute;
+margin-left: 225px !important;
+margin-top: 3px !important;
+}
+
+.pos2{
+    position: absolute;
+    margin-left: 225px !important;
+    margin-top: 3px !important;
+}
+.pos3{
+    position: absolute;
+    margin-left: 225px !important;
+    margin-top: 3px !important;
+}
+.pos4{
+    position: absolute;
+    margin-left: 225px !important;
+    margin-top: 3px !important;
+}
+.pos5{
+    position: absolute;
+    margin-left: 225px !important;
+    margin-top: 3px !important;
+}
